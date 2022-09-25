@@ -4,6 +4,10 @@
       "types": [
         "node"
       ],
+      "baseUrl": "./",
+      "paths": {
+        "src/*": ["src/*"]
+      },
       "allowSyntheticDefaultImports": true,
       "esModuleInterop": true
     }

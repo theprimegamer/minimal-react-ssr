@@ -11,6 +11,12 @@ export const sharedConfig: Configuration = {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
   },
+  resolve: {
+    alias: {
+      src: path.resolve(__dirname, "src"),
+    },
+    extensions: [".ts", ".tsx", ".js"],
+  },
   module: {
     rules: [
       {
