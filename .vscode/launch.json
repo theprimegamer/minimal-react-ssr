@@ -27,7 +27,8 @@
     "compounds": [
         {
             "name": "Server: Serve",
-            "configurations": ["Server: Watch", "Server: Run"]
+            "configurations": ["Server: Watch", "Server: Run"],
+            "stopAll": true
         }
     ]
 }
