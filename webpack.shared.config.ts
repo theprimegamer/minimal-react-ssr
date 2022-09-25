@@ -2,15 +2,9 @@ import path from "path";
 import { Configuration } from "webpack";
 // in case you run into any typescript error when configuring `devServer`
 import "webpack-dev-server";
-import HtmlWebpackPlugin from "html-webpack-plugin";
 
 export const sharedConfig: Configuration = {
   mode: "development",
-  entry: "./src/client/index.tsx",
-  output: {
-    filename: "bundle.js",
-    path: path.resolve(__dirname, "dist"),
-  },
   resolve: {
     alias: {
       src: path.resolve(__dirname, "src"),
@@ -31,10 +25,5 @@ export const sharedConfig: Configuration = {
       },
     ],
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: path.join(__dirname, "src", "client", "index.html"),
-    }),
-  ],
   devtool: "source-map",
 };

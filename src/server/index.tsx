@@ -14,7 +14,6 @@ app.get("/", (_req, res) => {
     <App />
   )}</div><script src="/static/app-load.js"></script>`;
 
-  res.setHeader("Content-type", "text/html");
   res.send(html);
 });
 

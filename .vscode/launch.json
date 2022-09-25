@@ -2,7 +2,13 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Serve",
+            "command": "npm run watch-server",
+            "name": "Server: Watch",
+            "request": "launch",
+            "type": "node-terminal"
+        },
+        {
+            "name": "Server: Run",
             "type": "node",
             "request": "launch",
             "runtimeExecutable": "nodemon",
@@ -16,6 +22,12 @@
             "outFiles": [
                 "${workspaceFolder}/**/*.js"
             ]
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Server: Serve",
+            "configurations": ["Server: Watch", "Server: Run"]
         }
     ]
 }

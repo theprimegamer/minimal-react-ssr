@@ -10,7 +10,6 @@ const expressconfig: Configuration = {
     filename: "server-bundle.js",
     path: path.resolve(__dirname, "dist"),
   },
-  plugins: [],
   target: "node",
   externals: [nodeExternals()],
 };
@@ -22,7 +21,6 @@ const staticConfig: Configuration = {
     filename: "app-load.js",
     path: path.resolve(__dirname, "dist", "public"),
   },
-  plugins: [],
 };
 
 export default [expressconfig, staticConfig];
