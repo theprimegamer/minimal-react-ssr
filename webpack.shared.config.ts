@@ -1,9 +1,12 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+import * as path from "path";
+import { Configuration } from "webpack";
+// in case you run into any typescript error when configuring `devServer`
+import "webpack-dev-server";
+import HtmlWebpackPlugin from "html-webpack-plugin";
 
-module.exports = {
+export const sharedConfig: Configuration = {
   mode: "development",
-  entry: "./src/index.tsx",
+  entry: "./src/client/index.tsx",
   output: {
     filename: "bundle.js",
     path: path.resolve(__dirname, "dist"),
@@ -11,7 +14,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.m?js$|\.tsx?/,
+        test: /\.js$|\.tsx?/,
         exclude: /(node_modules|bower_components)/,
         use: {
           loader: "babel-loader",
@@ -24,7 +27,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, "src", "index.html"),
+      template: path.join(__dirname, "src", "client", "index.html"),
     }),
   ],
 };
