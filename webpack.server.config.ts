@@ -3,9 +3,9 @@ import { Configuration } from "webpack";
 import { sharedConfig } from "./webpack.shared.config";
 import nodeExternals from "webpack-node-externals";
 
-const config: Configuration = {
+const expressconfig: Configuration = {
   ...sharedConfig,
-  entry: "./src/server/index.ts",
+  entry: "./src/server/index.tsx",
   output: {
     filename: "server-bundle.js",
     path: path.resolve(__dirname, "dist"),
@@ -15,4 +15,14 @@ const config: Configuration = {
   externals: [nodeExternals()],
 };
 
-export default config;
+const staticConfig: Configuration = {
+  ...sharedConfig,
+  entry: "./src/server/app-load.tsx",
+  output: {
+    filename: "app-load.js",
+    path: path.resolve(__dirname, "dist", "public"),
+  },
+  plugins: [],
+};
+
+export default [expressconfig, staticConfig];
