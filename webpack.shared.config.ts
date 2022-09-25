@@ -1,4 +1,4 @@
-import * as path from "path";
+import path from "path";
 import { Configuration } from "webpack";
 // in case you run into any typescript error when configuring `devServer`
 import "webpack-dev-server";
@@ -36,4 +36,5 @@ export const sharedConfig: Configuration = {
       template: path.join(__dirname, "src", "client", "index.html"),
     }),
   ],
+  devtool: "source-map",
 };

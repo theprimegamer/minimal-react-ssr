@@ -5,9 +5,11 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "dev": "webpack serve"
+    "dev": "webpack serve",
+    "build-server": "webpack -c ./webpack.server.config.ts",
+    "watch-server": "webpack -c ./webpack.server.config.ts -w",
+    "dev-server": "node ./dist/server-bundle.js"
   },
   "keywords": [],
   "author": "",
@@ -31,6 +33,7 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
+    "express": "^4.18.1",
     "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
