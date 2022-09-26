@@ -1,8 +1,8 @@
 {
-  "name": "scrap-node",
+  "name": "minimal-react-ssr",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/server-bundle.js",
   "private": true,
   "scripts": {
     "build": "webpack",
