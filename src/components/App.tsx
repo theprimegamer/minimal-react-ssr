@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "src/common/components/Button";
+import { Button } from "src/components/Button";
 
 export const App: React.FC = () => {
   return (

@@ -1,7 +1,7 @@
 import React from "react";
 import express from "express";
 import ReactDOMServer from "react-dom/server";
-import { App } from "src/common/components/App";
+import { AppContainer } from "src/components/AppContainer";
 import path from "path";
 
 const app = express();
@@ -10,11 +10,15 @@ const port = 3000;
 app.use("/static", express.static(path.resolve(__dirname, "public")));
 
 app.get("/", (_req, res) => {
-  const html = `<div id="appRoot">${ReactDOMServer.renderToString(
-    <App />
-  )}</div><script src="/static/app-load.js"></script>`;
-
-  res.send(html);
+  const stream = ReactDOMServer.renderToPipeableStream(
+    <AppContainer></AppContainer>,
+    {
+      onShellReady: () => {
+        stream.pipe(res);
+      },
+      bootstrapScripts: ["static/app-load.js"],
+    }
+  );
 });
 
 app.listen(port, () => {
