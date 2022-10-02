@@ -1,10 +1,10 @@
 import React from "react";
-import { App } from "src/components/App";
+import { App } from "./App";
 
-export const AppContainer: React.FC = () => {
+export const AppContainer = () => {
   return (
     <div id="appRoot">
-      <App></App>
+      <App />
     </div>
   );
 };
