@@ -1,6 +1,12 @@
 {
     "version": "0.2.0",
     "configurations": [
+    {
+        "command": "npm run dev",
+        "name": "Local Development",
+        "request": "launch",
+        "type": "node-terminal"
+    },
         {
             "command": "npm run watch-server",
             "name": "Server: Watch",

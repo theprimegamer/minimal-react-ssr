@@ -5,11 +5,11 @@
   "main": "dist/server-bundle.js",
   "private": true,
   "scripts": {
-    "build": "webpack",
-    "dev": "webpack serve",
+    "dev": "webpack serve -c ./webpack.local.config.ts",
     "build-server": "webpack -c ./webpack.server.config.ts",
     "watch-server": "webpack -c ./webpack.server.config.ts -w",
-    "dev-server": "node ./dist/server-bundle.js"
+    "dev-server": "node ./dist/server-bundle.js",
+    "audit": "npm audit --omit=dev"
   },
   "keywords": [],
   "author": "",
@@ -33,7 +33,7 @@
     "style-loader": "^3.3.1",
     "tailwindcss": "^3.1.8",
     "ts-node": "^10.9.1",
-    "typescript": "^4.8.3",
+    "typescript": "^4.8.4",
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0",
     "webpack-dev-server": "^4.11.1",
